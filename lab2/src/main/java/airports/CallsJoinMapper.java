@@ -1,1 +1,1 @@
-package airpors;
+package airports;
