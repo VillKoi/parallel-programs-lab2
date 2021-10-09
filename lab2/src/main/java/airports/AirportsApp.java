@@ -8,6 +8,7 @@ import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 
@@ -23,6 +24,8 @@ public class AirportsApp {
         job.setJarByClass(AirportsApp.class);
         job.setJobName("JoinJob sort");
 
+        ReadCSV(args[0]);
+
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, CallsJoinMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, SystemsJoinMapper.class);
 
@@ -36,7 +39,7 @@ public class AirportsApp {
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 
-    public void ReadCSV(String path) {
+    public static void ReadCSV(String path) throws FileNotFoundException {
         // TODO: уточнить путь
         CSVReader reader = new CSVReader(new FileReader("../resources/T_ONTIME_sample.csv"), ",", '"', 1);
         List< String[]> lines = reader.readAll();
