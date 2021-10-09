@@ -1,5 +1,6 @@
 package airports;
 
+import com.opencsv.exceptions.CsvException;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 
@@ -10,6 +11,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.opencsv.CSVReader;
@@ -39,13 +43,17 @@ public class AirportsApp {
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 
-    public static void ReadCSV(String path) throws FileNotFoundException {
+    public List<String[]>  ReadCSV(String path) throws IOException, CsvException {
         // TODO: уточнить путь
-        CSVReader reader = new CSVReader(new FileReader("../resources/T_ONTIME_sample.csv"), ",", '"', 1);
-        List< String[]> lines = reader.readAll();
+        Reader reader = new FileReader("../resources/T_ONTIME_sample.csv");
+
+        CSVReader csvReader = new CSVReader(reader);
+        List<String[]> list = new ArrayList<>();
+        list = csvReader.readAll();
 
         reader.close();
         csvReader.close();
 
+        return list;
     }
 }
