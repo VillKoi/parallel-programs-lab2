@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 
-import au.com.bytecode.opencsv.CSVReader;
+import com.opencsv.CSVReader;
 
 public class AirportsApp {
     public static void main(String[] args) throws Exception {
@@ -43,6 +43,9 @@ public class AirportsApp {
         // TODO: уточнить путь
         CSVReader reader = new CSVReader(new FileReader("../resources/T_ONTIME_sample.csv"), ",", '"', 1);
         List< String[]> lines = reader.readAll();
+
+        reader.close();
+        csvReader.close();
 
     }
 }

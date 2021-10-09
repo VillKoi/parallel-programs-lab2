@@ -12,7 +12,9 @@
       <change beforePath="$PROJECT_DIR$/../.idea/parallel-programs-lab2.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hadoop-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hadoop-examples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airports/AirportsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airports/AirportsApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +56,7 @@
       <updated>1633772260529</updated>
       <workItem from="1633772262258" duration="675000" />
       <workItem from="1633772960480" duration="213000" />
-      <workItem from="1633773195773" duration="4757000" />
+      <workItem from="1633773195773" duration="4956000" />
     </task>
     <servers />
   </component>
