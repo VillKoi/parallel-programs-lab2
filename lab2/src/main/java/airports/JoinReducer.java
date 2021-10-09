@@ -1,5 +1,7 @@
 package  airports;
 
+import java.io.IOException;
+
 import org.apache.hadoop.io.Text;
 
 public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
