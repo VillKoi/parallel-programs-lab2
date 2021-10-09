@@ -28,7 +28,8 @@ public class AirportsApp {
         job.setJarByClass(AirportsApp.class);
         job.setJobName("JoinJob sort");
 
-        ReadCSV(args[0]);
+        // TODO: уточнить путь
+        List<String[]> list = ReadCSV(args[0]);
 
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, CallsJoinMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, SystemsJoinMapper.class);
@@ -43,13 +44,12 @@ public class AirportsApp {
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 
-    public List<String[]>  ReadCSV(String path) throws IOException, CsvException {
-        // TODO: уточнить путь
-        Reader reader = new FileReader("../resources/T_ONTIME_sample.csv");
+    public List<String[]> ReadCSV(String path) throws IOException, CsvException {
 
+        Reader reader = new FileReader(path);
         CSVReader csvReader = new CSVReader(reader);
-        List<String[]> list = new ArrayList<>();
-        list = csvReader.readAll();
+
+        List<String[]> list = csvReader.readAll();
 
         reader.close();
         csvReader.close();
