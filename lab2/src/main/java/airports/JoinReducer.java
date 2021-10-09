@@ -1,4 +1,4 @@
-package  airports;
+package airports;
 
 import java.io.IOException;
 
