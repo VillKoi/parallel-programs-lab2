@@ -8,6 +8,11 @@ import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
+import java.io.FileReader;
+import java.util.List;
+
+import au.com.bytecode.opencsv.CSVReader;
+
 public class AirportsApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
@@ -29,5 +34,12 @@ public class AirportsApp {
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
+    }
+
+    public void ReadCSV(String path) {
+        // TODO: уточнить путь
+        CSVReader reader = new CSVReader(new FileReader("../resources/T_ONTIME_sample.csv"), ",", '"', 1);
+        List< String[]> lines = reader.readAll();
+
     }
 }

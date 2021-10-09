@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ad42f90d-720b-49fe-bcd4-e7afc961cbb5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airports/AirportsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airports/AirportsApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/664600583_T_ONTIME_sample.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +33,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -46,7 +50,7 @@
       <updated>1633772260529</updated>
       <workItem from="1633772262258" duration="675000" />
       <workItem from="1633772960480" duration="213000" />
-      <workItem from="1633773195773" duration="2074000" />
+      <workItem from="1633773195773" duration="2798000" />
     </task>
     <servers />
   </component>
