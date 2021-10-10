@@ -21,7 +21,7 @@ import com.opencsv.CSVReader;
 public class AirportsApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
-            System.err.println("Usage: AirportsApp <input path> <output path>");
+            System.err.println("Usage: AirportsApp <input path 1> <input path 2> <output path>");
             System.exit(-1);
         }
         Job job = Job.getInstance();
@@ -33,7 +33,9 @@ public class AirportsApp {
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, CallsJoinMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, SystemsJoinMapper.class);
 
-        FileOutputFormat.setOutputPath(job, new Path(args[2])); job.setPartitionerClass(TextPair.FirstPartitioner.class);
+        FileOutputFormat.setOutputPath(job, new Path(args[2]));
+
+        job.setPartitionerClass(TextPair.FirstPartitioner.class);
         job.setGroupingComparatorClass(TextPair.FirstComparator.class);
         job.setReducerClass(JoinReducer.class);
         job.setMapOutputKeyClass(TextPair.class);
