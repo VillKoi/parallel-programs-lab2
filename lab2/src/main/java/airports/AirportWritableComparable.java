@@ -11,13 +11,16 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     private Text value;
     private String airportID;
 
+    private int indicator;
+
     public AirportWritableComparable() {
         this.value = new  Text("");
         this.airportID = "";
     }
 
-    public AirportWritableComparable(String code){
+    public AirportWritableComparable(String code, int indicator){
         this.airportID = code;
+        this.indicator = indicator;
     }
 
     public void write(DataOutput var1) throws IOException{

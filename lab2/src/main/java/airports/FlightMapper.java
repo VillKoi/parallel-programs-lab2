@@ -20,7 +20,8 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
 
         String[] values = text.split(",");
         String destAirportID = values[14].replaceAll("\"", "");
+        String delayingTime = ;
 
-        context.write(new AirportWritableComparable(destAirportID), new Text(text));
+        context.write(new AirportWritableComparable(destAirportID, 1), new Text(delayingTime));
     }
 }

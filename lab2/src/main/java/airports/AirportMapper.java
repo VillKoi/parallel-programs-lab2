@@ -21,6 +21,6 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
         String airportID = values[0].replaceAll("\"", "");
         String airportName = values[1].replaceAll("\"", "");
 
-        context.write(new AirportWritableComparable(airportID), new Text(airportName));
+        context.write(new AirportWritableComparable(airportID, 0), new Text(airportName));
     }
 }
