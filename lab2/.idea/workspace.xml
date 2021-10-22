@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad42f90d-720b-49fe-bcd4-e7afc961cbb5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/airports/Partitioner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
@@ -12,7 +13,8 @@
       <change beforePath="$PROJECT_DIR$/../.idea/parallel-programs-lab2.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airports/GroupingComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airports/GroupingComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airports/AirportsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airports/AirportsApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airports/CallsJoinMapper.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,7 @@
       <workItem from="1633772262258" duration="675000" />
       <workItem from="1633772960480" duration="213000" />
       <workItem from="1633773195773" duration="12906000" />
-      <workItem from="1634918532883" duration="2274000" />
+      <workItem from="1634918532883" duration="2399000" />
     </task>
     <servers />
   </component>
