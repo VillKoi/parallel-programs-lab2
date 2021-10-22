@@ -11,10 +11,10 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     private Text value;
     private String airportID;
 
-    public AirportWritableComparable(){
+    public AirportWritableComparable() {
         this.value = new  Text("");
         this.airportID = "";
-    };
+    }
 
     public AirportWritableComparable(String code){
         this.airportID = code;
