@@ -8,13 +8,10 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class AirportWritableComparable implements WritableComparable<AirportWritableComparable>{
-    private Text value;
-
     private int airportID;
     private int indicator;
 
     public AirportWritableComparable() {
-        this.value = new  Text("");
         this.airportID = 0;
     }
 
@@ -32,10 +29,6 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     public void readFields(DataInput var1) throws IOException{
         this.airportID = var1.readInt();
         this.indicator = var1.readInt();
-    }
-
-    public Text getFirst(){
-        return this.value;
     }
 
     public int getAirportID(){
