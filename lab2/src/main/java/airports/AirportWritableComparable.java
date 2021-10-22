@@ -21,11 +21,11 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     }
 
     public void write(DataOutput var1) throws IOException{
-
+        var1.writeChars(this.airportID);
     }
 
     public void readFields(DataInput var1) throws IOException{
-
+        this.airportID = var1.toString();
     }
 
     public Text getFirst(){
