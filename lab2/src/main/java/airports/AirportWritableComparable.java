@@ -1,5 +1,6 @@
 package airports;
 
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
@@ -21,5 +22,9 @@ public class AirportWritableComparable {
 
     public int compare(WritableComparable a, WritableComparable b) {
         return a.compareTo(b);
+    }
+
+    public Text getFirst(){
+
     }
 }
