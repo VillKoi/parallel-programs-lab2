@@ -12,12 +12,13 @@ public class AirportsMapper extends Mapper<LongWritable, Text, Text, IntWritable
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         //code — идентификатор аэропорта
         //description — название аэропорта
-     //        < разбивает csv записываем нужную инфу
-//  в контекст пишется пара — Text и IntWritable >
         String text  =   value.toString();
-        String[] words =  text.replaceAll("[\\p{Punct}«».]", "").toLowerCase().split("\\s");
-        for (String word: words) {
+        String[] values = text.split(",");
+        String code = values[0];
+        String description = values[1];
+
+
             context.write(new Text(word), new IntWritable(1));
-        }
+        
     }
 }
