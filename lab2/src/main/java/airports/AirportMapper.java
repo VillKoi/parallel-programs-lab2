@@ -18,8 +18,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
         }
 
         String[] values = text.split("\",\"");
-        String code = values[0];
-        String description = values[1];
+        String code = values[0].replaceAll("\"", "");
+        String description = values[1].replaceAll("\"", "");
 
         context.write(new AirportWritableComparable(code), new Text(description));
     }
