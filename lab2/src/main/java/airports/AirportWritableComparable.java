@@ -13,6 +13,7 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
 
     public AirportWritableComparable() {
         this.airportID = 0;
+        this.indicator = 0;
     }
 
     public AirportWritableComparable(String code, int indicator){
