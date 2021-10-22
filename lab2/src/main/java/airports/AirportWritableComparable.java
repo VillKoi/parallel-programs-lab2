@@ -8,12 +8,11 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class AirportWritableComparable implements WritableComparable<AirportWritableComparable>{
-    private String code;
     private Text value;
     private String airportID;
 
     public AirportWritableComparable(String code){
-        this.code = code;
+        this.airportID = code;
     }
 
     public void write(DataOutput var1) throws IOException{
