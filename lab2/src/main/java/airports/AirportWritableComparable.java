@@ -37,7 +37,7 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
 
     @Override
     public int compareTo(AirportWritableComparable airport) {
-        return (this.airportID != airport.airportID) ? 0 : 1;
+        return (this.indicator != airport.indicator) ? 0 : 1;
     }
 
     public int compareAirportID(AirportWritableComparable airport) {
