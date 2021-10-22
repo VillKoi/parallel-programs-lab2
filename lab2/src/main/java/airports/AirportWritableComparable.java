@@ -9,26 +9,29 @@ import java.io.IOException;
 
 public class AirportWritableComparable implements WritableComparable<AirportWritableComparable>{
     private Text value;
-    private String airportID;
 
+    private int airportID;
     private int indicator;
 
     public AirportWritableComparable() {
         this.value = new  Text("");
-        this.airportID = "";
+        this.airportID = 0;
     }
 
     public AirportWritableComparable(String code, int indicator){
-        this.airportID = code;
+        this.airportID = Integer.parseInt(code);
         this.indicator = indicator;
     }
 
+    @Override
     public void write(DataOutput var1) throws IOException{
-        var1.writeChars(this.airportID);
+        var1.writeInt(this.airportID);
+        var1.writeInt(this.indicator);
     }
-
+    @Override
     public void readFields(DataInput var1) throws IOException{
-        this.airportID = var1.toString();
+        this.airportID = var1.readInt();
+        this.indicator = var1.readInt();
     }
 
     public Text getFirst(){
@@ -36,7 +39,7 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     }
 
     public int getAirportID(){
-        return Integer.parseInt(this.airportID);
+        return this.airportID;
     }
 
     @Override
@@ -45,6 +48,6 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     }
 
     public int compareAirportID(AirportWritableComparable item) {
-        return (this.airportID.equalsIgnoreCase(item.airportID)) ? 0 : 1;
+        return (this.airportID != item.airportID) ? 0 : 1;
     }
 }
