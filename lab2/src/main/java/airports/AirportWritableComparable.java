@@ -10,6 +10,7 @@ import java.io.IOException;
 public class AirportWritableComparable implements WritableComparable<AirportWritableComparable>{
     private String code;
     private Text value;
+    private String airportID;
 
     public AirportWritableComparable(String code){
         this.code = code;
@@ -33,6 +34,11 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
 
     @Override
     public int compareTo(AirportWritableComparable o) {
+        return 0;
+    }
+
+    public int compareAirportIDTo(AirportWritableComparable item) {
+        return this.airportID != item.airportID;
         return 0;
     }
 }
