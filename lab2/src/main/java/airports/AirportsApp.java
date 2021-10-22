@@ -35,7 +35,7 @@ public class AirportsApp {
 
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
-        job.setPartitionerClass(Partitioner.class);
+        job.setPartitionerClass(AiroportPartitioner.class);
         job.setGroupingComparatorClass(GroupingComparator.class);
         job.setReducerClass(JoinReducer.class);
 
