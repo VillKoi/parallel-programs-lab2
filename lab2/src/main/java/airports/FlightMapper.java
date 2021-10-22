@@ -10,6 +10,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         // DEST_AEROPORT_ID имеет номер 14
+        System.err.println("start FlightMapper");
 
         String text  =   value.toString();
 
