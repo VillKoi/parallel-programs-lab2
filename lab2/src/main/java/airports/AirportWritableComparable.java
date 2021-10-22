@@ -9,9 +9,17 @@ import java.io.IOException;
 public class AirportWritableComparable implements WritableComparator {
     public void write(DataOutput var1) throws IOException{
 
-    };
+    }
 
     public void readFields(DataInput var1) throws IOException{
 
-    };
+    }
+
+    public int compareTo(T o) {
+
+    }
+
+    public int compare(WritableComparable a, WritableComparable b) {
+        return a.compareTo(b);
+    }
 }
