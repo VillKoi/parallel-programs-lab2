@@ -17,7 +17,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
             return;
         }
 
-        String[] values = text.split(",");
+        String[] values = text.split("\",\"");
         String code = values[0];
         String description = values[1];
 
