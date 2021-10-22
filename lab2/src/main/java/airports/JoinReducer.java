@@ -29,7 +29,8 @@ public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, 
         meanTime /= number;
 
         context.write(airportName, new Text(
-                "Mean time:",
-        ));
+                "Mean time:" + meanTime +
+                        ", Max time: " + maxTime +
+                ", Min time: " + minTime));
     }
 }
