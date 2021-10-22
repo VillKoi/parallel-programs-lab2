@@ -7,7 +7,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class AirportWritableComparable implements WritableComparable{
+public class AirportWritableComparable implements WritableComparable<AirportWritableComparable>{
     private String code;
 
     public AirportWritableComparable(String code){
@@ -22,15 +22,16 @@ public class AirportWritableComparable implements WritableComparable{
 
     }
 
-    public int compareTo(T o) {
-
-    }
-
     public int compare(WritableComparable a, WritableComparable b) {
         return a.compareTo(b);
     }
 
     public Text getFirst(){
 
+    }
+
+    @Override
+    public int compareTo(AirportWritableComparable o) {
+        return 0;
     }
 }
