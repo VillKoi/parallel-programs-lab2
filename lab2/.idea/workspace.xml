@@ -12,7 +12,6 @@
       <change beforePath="$PROJECT_DIR$/../.idea/parallel-programs-lab2.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hadoop-examples.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,7 @@
       <workItem from="1633772262258" duration="675000" />
       <workItem from="1633772960480" duration="213000" />
       <workItem from="1633773195773" duration="12906000" />
-      <workItem from="1634918532883" duration="7227000" />
+      <workItem from="1634918532883" duration="7529000" />
     </task>
     <servers />
   </component>
