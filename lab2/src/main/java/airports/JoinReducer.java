@@ -15,12 +15,17 @@ public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, 
 
         Iterator<Text> iter = values.iterator();
         Text airportName = new Text(iter.next());
-        int minTime, maxTime, 
+        int minTime = -1, maxTime = -1, meanTime = -1;
+        int number;
 
         while (iter.hasNext()) {
-            Text call = iter.next();
+            Text delayingTime = iter.next();
+            float delay = Float.parseFloat(delayingTime.toString());
+            number++;
+
             Text outValue = new Text(call.toString() + "\t" + systemInfo.toString());
-            context.write(key.getFirst(), outValue);
         }
+
+        context.write(key.getFirst(), outValue);
     }
 }
