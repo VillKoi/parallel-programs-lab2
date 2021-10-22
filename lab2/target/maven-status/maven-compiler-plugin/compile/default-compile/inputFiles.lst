@@ -1,0 +1,7 @@
+/Users/tmvolno1/IdeaProjects/university/parallel-programs-lab2/lab2/src/main/java/airports/AirportApp.java
+/Users/tmvolno1/IdeaProjects/university/parallel-programs-lab2/lab2/src/main/java/airports/FlightMapper.java
+/Users/tmvolno1/IdeaProjects/university/parallel-programs-lab2/lab2/src/main/java/airports/AirportMapper.java
+/Users/tmvolno1/IdeaProjects/university/parallel-programs-lab2/lab2/src/main/java/airports/AirportWritableComparable.java
+/Users/tmvolno1/IdeaProjects/university/parallel-programs-lab2/lab2/src/main/java/airports/GroupingComparator.java
+/Users/tmvolno1/IdeaProjects/university/parallel-programs-lab2/lab2/src/main/java/airports/AirportPartitioner.java
+/Users/tmvolno1/IdeaProjects/university/parallel-programs-lab2/lab2/src/main/java/airports/JoinReducer.java

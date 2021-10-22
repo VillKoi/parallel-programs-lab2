@@ -1,0 +1,7 @@
+airports/FlightMapper.class
+airports/AirportWritableComparable.class
+airports/GroupingComparator.class
+airports/AirportApp.class
+airports/JoinReducer.class
+airports/AirportPartitioner.class
+airports/AirportMapper.class
