@@ -16,8 +16,13 @@ public class FlightJoinMapper extends Mapper<LongWritable, Text, Text, IntWritab
 //            в контекст пишется пара — Text и IntWritable >
         String text  =   value.toString();
         String[] words =  text.replaceAll("[\\p{Punct}«».]", "").toLowerCase().split("\\s");
-        for (String word: words) {
-            context.write(new Text(word), new IntWritable(1));
-        }
+       
+
+        String text  =   value.toString();
+        String[] values = text.split(",");
+        String code = values[0];
+        String description = values[1];
+
+        context.write(new Text(code), new Text(description));
     }
 }

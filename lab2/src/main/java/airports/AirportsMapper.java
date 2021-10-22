@@ -17,8 +17,6 @@ public class AirportsMapper extends Mapper<LongWritable, Text, Text, IntWritable
         String code = values[0];
         String description = values[1];
 
-
-            context.write(new Text(word), new IntWritable(1));
-        
+        context.write(new Text(code), new Text(description));
     }
 }
