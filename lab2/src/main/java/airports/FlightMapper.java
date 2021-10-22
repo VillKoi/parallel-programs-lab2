@@ -18,9 +18,10 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
             return;
         }
 
+//        ARR_DELAY_NEW -  разница в минутах между расчетным временем приземления и реальным (>=0)
         String[] values = text.split(",");
         String destAirportID = values[14].replaceAll("\"", "");
-        String delayingTime = ;
+        String delayingTime = values[18].replaceAll("\"", "");
 
         context.write(new AirportWritableComparable(destAirportID, 1), new Text(delayingTime));
     }
