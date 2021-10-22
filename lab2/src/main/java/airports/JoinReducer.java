@@ -9,10 +9,6 @@ import org.apache.hadoop.mapreduce.Reducer;
 public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, Text> {
     @Override
     protected void reduce(AirportWritableComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-        // На вход reducer подаются наборы данных в которых в первой строчке будет строка справочника,
-        // а в последующих строки основной таблицы
-        System.out.println("start reduce");
-
         Iterator<Text> iter = values.iterator();
         Text airportName = new Text(iter.next());
         float minTime = Float.MAX_VALUE, maxTime = 0, meanTime = 0;
@@ -33,6 +29,7 @@ public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, 
         context.write(airportName, new Text(
                 "Mean time:" + meanTime +
                         ", Max time: " + maxTime +
-                        ", Min time: " + minTime));
+                        ", Min time: " + minTime)
+        );
     }
 }
