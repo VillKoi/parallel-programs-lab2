@@ -28,7 +28,7 @@ public class AirportsApp {
 
         List<String[]> list = ReadCSV(args[0]);
 
-        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightJoinMapper.class);
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportsMapper.class);
 
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
@@ -37,7 +37,7 @@ public class AirportsApp {
         job.setGroupingComparatorClass(GroupingComparator.class);
         job.setReducerClass(JoinReducer.class);
 
-        job.setMapOutputKeyClass(TextPair.class);
+        job.setMapOutputKeyClass(AirportWritableComparable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);

@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.util.Iterator;
 
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
 
-public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
+public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, Text> {
     @Override
-    protected void reduce(TextPair key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+    protected void reduce(AirportWritableComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         // На вход reducer подаются наборы данных в которых в первой строчке будет строка справочника,
         // а в последующих строки основной таблицы
         Iterator<Text> iter = values.iterator();
