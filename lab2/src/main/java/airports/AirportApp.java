@@ -19,7 +19,7 @@ import com.opencsv.CSVReader;
 public class AirportApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
-            System.err.println("Usage: AirportsApp <input path 1> <input path 2> <output path>");
+            System.err.println("Usage: AirportsApp <1: input path FlightMapper> <2: input path AirportMapper> <output path>");
             System.exit(-1);
         }
         Job job = Job.getInstance();
