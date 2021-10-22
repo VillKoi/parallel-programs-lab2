@@ -18,7 +18,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
             return;
         }
 
-        String[] values = text.split("\",\"");
+        String[] values = text.split(",");
         String destAirportID = values[14];
 
         context.write(new AirportWritableComparable(destAirportID), new Text(text));
