@@ -9,7 +9,8 @@ import org.apache.hadoop.mapreduce.Mapper;
 public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
     @Override
     protected void reduce(TextPair key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-        // Code,Description
+        // На вход reducer подаются наборы данных в которых в первой строчке будет строка справочника,
+        // а в последующих строки основной таблицы
         Iterator<Text> iter = values.iterator();
         Text systemInfo = new Text(iter.next());
         while (iter.hasNext()) {
