@@ -38,6 +38,6 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     }
 
     public int compareAirportID(AirportWritableComparable item) {
-        return (this.airportID.equalsIgnoreCase(item.airportID)) ? 1 : 0;
+        return (this.airportID.equalsIgnoreCase(item.airportID)) ? 0 : 1;
     }
 }
