@@ -6,6 +6,7 @@ import org.apache.hadoop.io.WritableComparator;
 public class GroupingComparator extends WritableComparator {
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
-        return a.compareTo(b);
+        (AirportWritableComparable) airport = (AirportWritableComparable) a;
+        return airport.compareAirportID(b);
     }
 }

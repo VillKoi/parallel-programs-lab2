@@ -37,8 +37,7 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
         return 0;
     }
 
-    public int compareAirportIDTo(AirportWritableComparable item) {
-        return this.airportID != item.airportID;
-        return 0;
+    public int compareAirportID(AirportWritableComparable item) {
+        return (this.airportID != item.airportID) ? 0 : 1;
     }
 }
