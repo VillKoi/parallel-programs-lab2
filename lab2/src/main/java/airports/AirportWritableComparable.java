@@ -35,6 +35,10 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
         return this.value;
     }
 
+    public String getAirportID(){
+        return this.airportID;
+    }
+
     @Override
     public int compareTo(AirportWritableComparable o) {
         return 0;
