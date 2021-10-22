@@ -15,7 +15,6 @@ import java.io.Reader;
 import java.util.List;
 
 import com.opencsv.CSVReader;
- hadoop jar $HADOOP_INSTALL/  airports.AirportApp main/resources/T_ONTIME_sample.csv main/resources/L_AIRPORT_ID.csv  output
 
 public class AirportApp {
     public static void main(String[] args) throws Exception {
