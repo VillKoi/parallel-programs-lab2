@@ -16,7 +16,7 @@ public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, 
         Iterator<Text> iter = values.iterator();
         Text airportName = new Text(iter.next());
         int minTime = -1, maxTime = -1, meanTime = -1;
-        int number;
+        int number = 0;
 
         while (iter.hasNext()) {
             Text delayingTime = iter.next();
@@ -26,6 +26,10 @@ public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, 
             Text outValue = new Text(call.toString() + "\t" + systemInfo.toString());
         }
 
-        context.write(key.getFirst(), outValue);
+        meanTime /= number;
+
+        context.write(airportName, new Text(
+                "Mean time:",
+        ));
     }
 }
