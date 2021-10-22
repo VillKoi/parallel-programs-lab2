@@ -17,6 +17,11 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
         // DEST_AEROPORT_ID имеет номер 14
 
         String text  =   value.toString();
+
+        if (text.contains("YEAR")) {
+            return;
+        }
+
         String[] values = text.split(",");
         String destAirportID = values[14];
 

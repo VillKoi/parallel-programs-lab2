@@ -10,9 +10,13 @@ import java.io.IOException;
 public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableComparable, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        //code — идентификатор аэропорта
-        //description — название аэропорта
-        String text  =   value.toString();
+        // code — идентификатор аэропорта
+        // description — название аэропорта
+        String text = value.toString();
+        if (text.contains("Code")) {
+            return;
+        }
+
         String[] values = text.split(",");
         String code = values[0];
         String description = values[1];
