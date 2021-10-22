@@ -27,6 +27,10 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
         return this.value;
     }
 
+    //    public int compare(WritableComparable a, WritableComparable b) {
+//        return a.compareTo(b);
+//    }
+
     @Override
     public int compareTo(AirportWritableComparable o) {
         return 0;
