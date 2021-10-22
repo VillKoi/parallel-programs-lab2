@@ -14,13 +14,12 @@ public class FlightJoinMapper extends Mapper<LongWritable, Text, Text, IntWritab
         //2015	1	1	10	6	2015-01-10	AA	19805	AA	N790AA	1	12478	1247802	31703	12892	1225	1235	0.00	0.00	0.00		345.00	2475.00
 //        < разбивает csv записываем нужную инфу
 //            в контекст пишется пара — Text и IntWritable >
-      
         // DEST_AEROPORT_ID имеет номер 14
 
         String text  =   value.toString();
         String[] values = text.split(",");
-        String DEST_AEROPORT_ID = values[14];
+        String destAeroportID = values[14];
 
-        context.write(new Text(code), new Text(description));
+        context.write(new Text(destAeroportID), new Text(text));
     }
 }
