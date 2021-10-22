@@ -9,11 +9,9 @@ import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.opencsv.CSVReader;
@@ -35,7 +33,7 @@ public class AirportsApp {
 
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
-        job.setPartitionerClass(AiroportPartitioner.class);
+        job.setPartitionerClass(AirportPartitioner.class);
         job.setGroupingComparatorClass(GroupingComparator.class);
         job.setReducerClass(JoinReducer.class);
 
