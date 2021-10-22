@@ -30,7 +30,7 @@ public class AirportsApp {
 
         List<String[]> list = ReadCSV(args[0]);
 
-        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, CallsJoinMapper.class);
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightJoinMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, SystemsJoinMapper.class);
 
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
