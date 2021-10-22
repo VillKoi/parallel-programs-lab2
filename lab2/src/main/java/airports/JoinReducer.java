@@ -14,7 +14,9 @@ public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, 
         System.out.println("start reduce");
 
         Iterator<Text> iter = values.iterator();
-        Text systemInfo = new Text(iter.next());
+        Text airportName = new Text(iter.next());
+        int minTime, maxTime, 
+
         while (iter.hasNext()) {
             Text call = iter.next();
             Text outValue = new Text(call.toString() + "\t" + systemInfo.toString());
