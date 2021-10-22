@@ -16,20 +16,20 @@ import java.util.List;
 
 import com.opencsv.CSVReader;
 
-public class AirportsApp {
+public class AirportApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
             System.err.println("Usage: AirportsApp <input path 1> <input path 2> <output path>");
             System.exit(-1);
         }
         Job job = Job.getInstance();
-        job.setJarByClass(AirportsApp.class);
+        job.setJarByClass(AirportApp.class);
         job.setJobName("JoinJob sort");
 
         List<String[]> list = ReadCSV(args[0]);
 
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
-        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportsMapper.class);
+        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
 
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 

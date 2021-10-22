@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class AirportWritableComparable implements WritableComparable<AirportWritableComparable>{
     private String code;
+    private Text value;
 
     public AirportWritableComparable(String code){
         this.code = code;
@@ -22,12 +23,8 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
 
     }
 
-    public int compare(WritableComparable a, WritableComparable b) {
-        return a.compareTo(b);
-    }
-
     public Text getFirst(){
-
+        return this.value;
     }
 
     @Override
