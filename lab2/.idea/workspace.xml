@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/airports/AirportMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airports/AirportMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/airports/AirportWritableComparable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airports/AirportWritableComparable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airports/FlightMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airports/FlightMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,7 @@
       <workItem from="1634918532883" duration="16875000" />
       <workItem from="1634980489679" duration="1112000" />
       <workItem from="1634982210131" duration="10000" />
-      <workItem from="1634982246277" duration="1808000" />
+      <workItem from="1634982246277" duration="2202000" />
     </task>
     <servers />
   </component>

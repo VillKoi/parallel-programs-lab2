@@ -21,14 +21,14 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     }
 
     @Override
-    public void write(DataOutput var1) throws IOException{
-        var1.writeInt(this.airportID);
-        var1.writeInt(this.indicator);
+    public void write(DataOutput data) throws IOException{
+        data.writeInt(this.airportID);
+        data.writeInt(this.indicator);
     }
     @Override
-    public void readFields(DataInput var1) throws IOException{
-        this.airportID = var1.readInt();
-        this.indicator = var1.readInt();
+    public void readFields(DataInput data) throws IOException{
+        this.airportID = data.readInt();
+        this.indicator = data.readInt();
     }
 
     public int getAirportID(){
@@ -37,10 +37,10 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
 
     @Override
     public int compareTo(AirportWritableComparable airport) {
-        int airC = this.compareAirportID(airport);
+        int airCompare = this.compareAirportID(airport);
 
-        if (airC != 0) {
-            return airC;
+        if (airCompare != 0) {
+            return airCompare;
         }
 
         if (this.indicator == airport.indicator) {

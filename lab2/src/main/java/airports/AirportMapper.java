@@ -7,10 +7,11 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableComparable, Text> {
+    private static final String FIRST_STRING_PART = "Code";
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String text = value.toString();
-        if (text.contains("Code")) {
+        if (text.contains(FIRST_STRING_PART)) {
             return;
         }
 
