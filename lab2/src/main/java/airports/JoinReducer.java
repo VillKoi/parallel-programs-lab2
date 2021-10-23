@@ -11,6 +11,7 @@ public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, 
     protected void reduce(AirportWritableComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
         Text airportName = new Text(iter.next());
+
         float minTime = Float.MAX_VALUE, maxTime = 0, meanTime = 0;
         int number = 0;
 
