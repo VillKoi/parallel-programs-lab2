@@ -9,18 +9,14 @@ import java.io.IOException;
 public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComparable, Text> {
     private static final String FIRST_STRING_IDENTIFICATOR = "YEAR";
 
-    private static final int AIRPORT_ID = 14;
-    private static final int ARR_DELAY = 18;
+    private static final int AIRPORT_ID_NUMBER = 14;
+    private static final int ARR_DELAY_NUMBER = 18;
 
-
-    private static final String STRING_SPLITTER = "\",\"";
+    private static final String STRING_SPLITTER = ",";
     private static final String EMPTY_STRING = "";
     private static final String DOUBLE_QUOTES = "\"";
 
-    private static final int AIRPORT_ID_NUMBER = 0;
-    private static final int AIRPORT_NAME_NUMBER = 1;
-
-    private static final int DIRECTORY_INDICATOR = 1;
+    private static final int DATA_INDICATOR = 1;
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -30,9 +26,10 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
             return;
         }
 
-        String[] values = text.split(",");
-        String destAirportID = values[AIRPORT_ID].replaceAll("\"", "");
-        String delayingTime = values[ARR_DELAY].replaceAll("\"", "");
+        String[] values = text.split(STRING_SPLITTER);
+
+        String destAirportID = removeDoubleQuotes(values[AIRPORT_ID_NUMBER]);
+        String delayingTime = removeDoubleQuotes(values[ARR_DELAY_NUMBER]);
 
         if (delayingTime.equals("0.00")  || delayingTime.length() == 0)  {
             return;
@@ -41,5 +38,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
         float delay = Float.parseFloat(delayingTime);
 
         context.write(new AirportWritableComparable(destAirportID, 1), new Text(String.valueOf(delay)));
+    }
+
+    private static String removeDoubleQuotes(String value) {
+        return value.replaceAll(DOUBLE_QUOTES, EMPTY_STRING);
     }
 }

@@ -16,7 +16,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
     private static final int AIRPORT_ID_NUMBER = 0;
     private static final int AIRPORT_NAME_NUMBER = 1;
 
-    private static final int DIRECTORY_INDICATOR = 1;
+    private static final int DIRECTORY_INDICATOR = 0;
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
