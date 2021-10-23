@@ -31,16 +31,24 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
         String destAirportID = removeDoubleQuotes(values[AIRPORT_ID_NUMBER]);
         String delayingTime = removeDoubleQuotes(values[ARR_DELAY_NUMBER]);
 
-        if (delayingTime.equals("0.00")  || delayingTime.length() == 0)  {
+        if (delayingTime.isEmpty())  {
             return;
         }
 
         float delay = Float.parseFloat(delayingTime);
 
-        context.write(new AirportWritableComparable(destAirportID, 1), new Text(String.valueOf(delay)));
+        if (delay == 0) {
+            return;
+        }
+
+        context.write(new AirportWritableComparable(destAirportID, DATA_INDICATOR), new Text(String.valueOf(delay)));
     }
 
     private static String removeDoubleQuotes(String value) {
+        return value.replaceAll(DOUBLE_QUOTES, EMPTY_STRING);
+    }
+
+    private static (String, boolean) correctDelayingTime(String value) {
         return value.replaceAll(DOUBLE_QUOTES, EMPTY_STRING);
     }
 }
