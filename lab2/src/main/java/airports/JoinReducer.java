@@ -15,6 +15,10 @@ public class JoinReducer extends Reducer<AirportWritableComparable, Text, Text, 
         float minTime = Float.MAX_VALUE, maxTime = 0, meanTime = 0;
         int number = 0;
 
+        if (!iter.hasNext()) {
+            return;
+        }
+
         while (iter.hasNext()) {
             Text delayingTime = iter.next();
             float delay = Float.parseFloat(delayingTime.toString());

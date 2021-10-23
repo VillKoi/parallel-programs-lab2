@@ -12,7 +12,8 @@
       <change beforePath="$PROJECT_DIR$/../.idea/parallel-programs-lab2.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airports/JoinReducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airports/JoinReducer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,7 @@
       <workItem from="1634918532883" duration="16875000" />
       <workItem from="1634980489679" duration="1112000" />
       <workItem from="1634982210131" duration="10000" />
-      <workItem from="1634982246277" duration="622000" />
+      <workItem from="1634982246277" duration="867000" />
     </task>
     <servers />
   </component>
