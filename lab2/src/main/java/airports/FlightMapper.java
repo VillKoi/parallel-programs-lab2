@@ -7,19 +7,19 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComparable, Text> {
+    private static final int AIRPORT_ID = 14;
+    private static final int ARR_DELAY = 18;
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        // DEST_AEROPORT_ID имеет номер 14
         String text = value.toString();
 
         if (text.contains("YEAR")) {
             return;
         }
 
-//        ARR_DELAY_NEW -  разница в минутах между расчетным временем приземления и реальным (>=0)
         String[] values = text.split(",");
-        String destAirportID = values[14].replaceAll("\"", "");
-        String delayingTime = values[18].replaceAll("\"", "");
+        String destAirportID = values[AIRPORT_ID].replaceAll("\"", "");
+        String delayingTime = values[ARR_DELAY].replaceAll("\"", "");
 
         if (delayingTime.equals("0.00")  || delayingTime.length() == 0)  {
             return;
