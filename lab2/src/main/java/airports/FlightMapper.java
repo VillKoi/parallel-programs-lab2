@@ -21,9 +21,11 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
         String destAirportID = values[14].replaceAll("\"", "");
         String delayingTime = values[18].replaceAll("\"", "");
 
-        if (delayingTime.equals("0.00")  || delayingTime.equals(""))  {
+        if (delayingTime.equals("0.00")  || delayingTime.length() == 0)  {
             return;
         }
+
+        Float.parseFloat(delayingTime);
 
         context.write(new AirportWritableComparable(destAirportID, 1), new Text(delayingTime));
     }
