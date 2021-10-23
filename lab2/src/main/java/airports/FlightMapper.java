@@ -9,12 +9,12 @@ import java.io.IOException;
 public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComparable, Text> {
     private static final int AIRPORT_ID = 14;
     private static final int ARR_DELAY = 18;
-    private static final String FIRST_STRING_PART = "YEAR";
+    private static final String FIRST_STRING_IDENTIFICATOR = "YEAR";
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String text = value.toString();
 
-        if (text.contains(FIRST_STRING_PART)) {
+        if (text.contains(FIRST_STRING_IDENTIFICATOR)) {
             return;
         }
 
