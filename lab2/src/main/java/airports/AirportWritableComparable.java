@@ -39,7 +39,9 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     public int compareTo(AirportWritableComparable airport) {
         int airC = this.compareAirportID(airport);
 
-        if 
+        if (airC != 0) {
+            return airC;
+        }
 
         if (this.indicator == airport.indicator) {
             return 0;
@@ -53,6 +55,6 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
             return 0;
         }
 
-        return (this.airportID > airport.airportID) ? 0 : 1;
+        return (this.airportID > airport.airportID) ? 1 : -1;
     }
 }
