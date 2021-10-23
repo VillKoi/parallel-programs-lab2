@@ -10,7 +10,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
     private static final String FIRST_STRING_PART = "Code";
     private static final String STRING_SPLITTER = "\",\"";
     private static final String EMPTY_STRING = "Code";
-    private static final String DOUBLE_QUOTES = "Code";
+    private static final String DOUBLE_QUOTES = "\"";
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -20,13 +20,13 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
         }
 
         String[] values = text.split(STRING_SPLITTER);
-        String airportID = values[0].replaceAll("\"", "");
-        String airportName = values[1].replaceAll("\"", "");
+        String airportID = removeDoubleQuotes(  values[0]);
+        String airportName = removeDoubleQuotes(  values[1]);
 
         context.write(new AirportWritableComparable(airportID, 0), new Text(airportName));
     }
 
     private static String removeDoubleQuotes(String value) {
-        return value.replaceAll("\"", EMPTY_STRING);
+        return value.replaceAll(DOUBLE_QUOTES, EMPTY_STRING);
     }
 }
