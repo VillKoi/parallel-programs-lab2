@@ -37,7 +37,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
 
         float delay = Float.parseFloat(delayingTime);
 
-        if (delay == 0) {
+        if (correctDelayingTime(delay)) {
             return;
         }
 
@@ -48,7 +48,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
         return value.replaceAll(DOUBLE_QUOTES, EMPTY_STRING);
     }
 
-    private static (String, boolean) correctDelayingTime(String value) {
-        return value.replaceAll(DOUBLE_QUOTES, EMPTY_STRING);
+    private static boolean correctDelayingTime(float delay) {
+        return delay != 0;
     }
 }
