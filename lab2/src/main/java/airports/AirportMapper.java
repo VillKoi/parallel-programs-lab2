@@ -14,9 +14,9 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
     private static final String DOUBLE_QUOTES = "\"";
 
     private static final int AIRPORT_ID_NUMBER = 0;
-    private static final int AITPORT_NAME_NUMBER = 1;
+    private static final int AIRPORT_NAME_NUMBER = 1;
 
-    
+    private static final int DIRECTORY_INDICATOR = 1;
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -27,9 +27,9 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportWritableCom
 
         String[] values = text.split(STRING_SPLITTER);
         String airportID = removeDoubleQuotes(values[AIRPORT_ID_NUMBER]);
-        String airportName = removeDoubleQuotes(values[AITPORT_NAME_NUMBER]);
+        String airportName = removeDoubleQuotes(values[AIRPORT_NAME_NUMBER]);
 
-        context.write(new AirportWritableComparable(airportID, 0), new Text(airportName));
+        context.write(new AirportWritableComparable(airportID, DIRECTORY_INDICATOR), new Text(airportName));
     }
 
     private static String removeDoubleQuotes(String value) {
