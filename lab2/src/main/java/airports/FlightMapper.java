@@ -25,8 +25,8 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportWritableComp
             return;
         }
 
-        Float.parseFloat(delayingTime);
+        float delay = Float.parseFloat(delayingTime);
 
-        context.write(new AirportWritableComparable(destAirportID, 1), new Text(delayingTime));
+        context.write(new AirportWritableComparable(destAirportID, 1), new Text(String.valueOf(delay)));
     }
 }
